@@ -1,37 +1,113 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../assets/logo.svg";
-import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
+import { CommandBar, ICommandBarItemProps } from 'office-ui-fabric-react/lib/CommandBar';
+import { IButtonProps } from 'office-ui-fabric-react/lib/Button';
+import "antd/dist/antd.css";
+import { Menu } from 'antd';
 
-const Navbar: React.FC = () => {
-    return (
-        <div>
-            <Link to='/'>
-                <img
-                    src={logo}
-                    alt="store"
-                    className="navbar-brand" />
-            </Link>
-            <ul className="navbar-nav align-items-center">
-                <li className="nav-item ml-5 d-flex">
-                    <Link to="/products" className="nav-link">
-                        products
-                        </Link>
-                    <Link to="/about" className="nav-link">
-                        about
-                        </Link>
-                </li>
-            </ul>
-            <Link to='/cart' className="ml-auto">
-                <PrimaryButton>
-                    <span className="mr-2">
-                        <i className="fas fa-cart-plus" />
-                    </span>
-                       my cart
-                    </PrimaryButton>
-            </Link>
-        </div>
-    );
+const overflowProps: IButtonProps = { ariaLabel: 'More commands' };
+
+const handleClick = () => {
+    console.log('click ');
 }
 
+export const Navbar: React.FC = () => {
+    return (
+        <Menu onClick={handleClick} mode="horizontal">
+            <Menu.Item key="one">
+                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                Navigation One - Link
+                </a>
+            </Menu.Item>
+            <Menu.Item key="two">
+                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                Navigation Two - Link
+                </a>
+            </Menu.Item>
+            <Menu.Item key="three">
+                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                Navigation Three - Link
+                </a>
+            </Menu.Item>
+            <Menu.Item key="four">
+                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                Navigation Four - Link
+                </a>
+            </Menu.Item>
+        </Menu>
+            
+    );
+};
+
+
+const _items: ICommandBarItemProps[] = [
+    {
+      key: 'newItem',
+      text: 'New',
+      cacheKey: 'myCacheKey', // changing this key will invalidate this item's cache
+      iconProps: { iconName: 'Add' },
+      subMenuProps: {
+        items: [
+          {
+            key: 'emailMessage',
+            text: 'Email message',
+            iconProps: { iconName: 'Mail' },
+            ['data-automation-id']: 'newEmailButton', // optional
+          },
+          {
+            key: 'calendarEvent',
+            text: 'Calendar event',
+            iconProps: { iconName: 'Calendar' },
+          },
+        ],
+      },
+    },
+    {
+      key: 'upload',
+      text: 'Upload',
+      iconProps: { iconName: 'Upload' },
+      href: 'https://dev.office.com/fabric',
+    },
+    {
+      key: 'share',
+      text: 'Share',
+      iconProps: { iconName: 'Share' },
+      onClick: () => console.log('Share'),
+    },
+    {
+      key: 'download',
+      text: 'Download',
+      iconProps: { iconName: 'Download' },
+      onClick: () => console.log('Download'),
+    },
+  ];
+  
+  const _overflowItems: ICommandBarItemProps[] = [
+    { key: 'move', text: 'Move to...', onClick: () => console.log('Move to'), iconProps: { iconName: 'MoveToFolder' } },
+    { key: 'copy', text: 'Copy to...', onClick: () => console.log('Copy to'), iconProps: { iconName: 'Copy' } },
+    { key: 'rename', text: 'Rename...', onClick: () => console.log('Rename'), iconProps: { iconName: 'Edit' } },
+  ];
+  
+  const _farItems: ICommandBarItemProps[] = [
+    {
+      key: 'tile',
+      text: 'Grid view',
+      // This needs an ariaLabel since it's icon-only
+      ariaLabel: 'Grid view',
+      iconOnly: true,
+      iconProps: { iconName: 'Tiles' },
+      onClick: () => console.log('Tiles'),
+    },
+    {
+      key: 'info',
+      text: 'Info',
+      // This needs an ariaLabel since it's icon-only
+      ariaLabel: 'Info',
+      iconOnly: true,
+      iconProps: { iconName: 'Info' },
+      onClick: () => console.log('Info'),
+    },
+  ];
+  
 export default Navbar;

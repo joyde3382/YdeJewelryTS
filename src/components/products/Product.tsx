@@ -2,6 +2,11 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ContextStore from '../../Context';
 import { IDetailedProduct } from '../../models/IDetailProduct';
+import 'antd/dist/antd.css';
+// import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
+import { Button, Card } from 'antd';
+
+import styles from './Product.module.scss';
 
 const Product: React.FC<{currentProduct: IDetailedProduct}> = (props: {currentProduct: IDetailedProduct}) => {
     
@@ -10,38 +15,30 @@ const Product: React.FC<{currentProduct: IDetailedProduct}> = (props: {currentPr
     const state = useContext(ContextStore);
 
     return (
-        <div className="card">
-            <div
-                className="img-container p-5"
-                onClick={onImageClick}>
-                <Link to="/details" >
-                    <img src={selectedProduct?.img} alt="product" className="card-img-top" />
-                </Link>
+        <div className={styles.product}>
+            <Link to="/details" >
 
-                <button className="cart-btn"
-                    disabled={selectedProduct?.inCart ? true : false}
-                    onClick={onImageClick}>
-                    {selectedProduct?.inCart ? (
-                        <p className="text-capitalize mb-0">
-                            {" "}
-                            in cart
+                <Card
+                    hoverable
+                    style={{width: 320}}
+                    
+                    cover={<img  onClick={onImageClick} src={selectedProduct?.img} alt="product" />} 
+                >    
+                    {/* card footer */}
+                    <div className={styles.footer} >
+                        <p className="align-self-center mb-0" >
+                            {selectedProduct?.title}
                         </p>
-                    ) : (
-                            <i className="fas fa-cart-plus" />
-                        )}
-                </button>
-            </div>
+                        <h5 className="text-blue font-italic mb-0" >
+                            <span className="mr-1">$</span>
+                            {selectedProduct?.price}
+                        </h5>
+                        <Button type="primary">Buy</Button>
+                    </div>
+                </Card>
+            </Link>
 
-            {/* card footer */}
-            <div className="card-footer d-flex justify-content-between" >
-                <p className="align-self-center mb-0" >
-                    {selectedProduct?.title}
-                </p>
-                <h5 className="text-blue font-italic mb-0" >
-                    <span className="mr-1">$</span>
-                    {selectedProduct?.price}
-                </h5>
-            </div>
+            
         </div>
     );
 
