@@ -17,9 +17,7 @@ const Product: React.FC<{currentProduct: IDetailedProduct}> = (props: {currentPr
             <Link to="/details" >
 
                 <Card
-                    hoverable
-                    style={{width: 320}}
-                    
+                    hoverable                    
                     cover={<img onClick={onImageClick} src={selectedProduct?.img} alt="product" />} 
                 >    
                     {/* card footer */}

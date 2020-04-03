@@ -11,13 +11,12 @@ const ProductList: React.FC = () => {
   for (let i = 0; i !== products.length; i++) {
     productsView.push(<Product currentProduct={products[i]} />);
   }
-  // {productsView}
-  //             {console.log(productsView)}
 
   return (
-    // <div className="py-5">
     <div className={styles.container}>
-      <div className={styles.products}>{productsView}</div>
+      <div className={styles.products}>
+        {productsView}
+      </div>
     </div>
   );
 };
