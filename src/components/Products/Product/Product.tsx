@@ -46,22 +46,22 @@ const Product: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
     state.setModelOpen(true);
   }
 };
-                <Card
-                    hoverable                    
-                    cover={<img onClick={onImageClick} src={selectedProduct?.img} alt="product" />} 
-                >    
-                    {/* card footer */}
-                    <div className={styles.footer} >
-                        <p className="align-self-center mb-0" >
-                            {selectedProduct?.title}
-                        </p>
-                        <h5 className="text-blue font-italic mb-0" >
-                            <span className="mr-1">$</span>
-                            {selectedProduct?.price}
-                        </h5>
-                        <Button type="primary">Buy</Button>
-                    </div>
-                </Card>
-            </Link>
+//     <Card
+//         hoverable
+//         cover={<img onClick={} src={selectedProduct?.img} alt="product" />}
+//     >
+//         {/* card footer */}
+//         <div className={styles.footer} >
+//             <p className="align-self-center mb-0" >
+//                 {selectedProduct?.title}
+//             </p>
+//             <h5 className="text-blue font-italic mb-0" >
+//                 <span className="mr-1">$</span>
+//                 {selectedProduct?.price}
+//             </h5>
+//             <Button type="primary">Buy</Button>
+//         </div>
+//     </Card>
+// </Link>
 
 export default Product;
