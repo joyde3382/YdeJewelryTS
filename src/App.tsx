@@ -40,7 +40,7 @@ const App: React.FC = () => {
 
   return (
     <ContextStore.Provider value={initialState}>
-      <PageSetup></PageSetup>
+      <PageSetup />
     </ContextStore.Provider>
   );
 

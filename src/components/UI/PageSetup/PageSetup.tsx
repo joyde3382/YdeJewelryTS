@@ -31,6 +31,7 @@ const PageSetup: React.FC = () => {
             <Route component={Default} />
           </Switch>
         </Content>
+
         <Footer className={styles.footer}>Footer</Footer>
       </Layout>
     </Router>
