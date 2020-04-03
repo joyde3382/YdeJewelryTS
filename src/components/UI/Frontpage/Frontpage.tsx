@@ -12,7 +12,7 @@ const Frontpage: React.FC = () => {
 
   return (
     <div>
-      <Row>
+      <Row style={{ display: "block" }}>
         <Welcome />
       </Row>
       <Row>
