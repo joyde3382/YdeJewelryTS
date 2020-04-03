@@ -15,7 +15,9 @@ const Portfolio: React.FC = () => {
   return (
     <div>
       <h1 className={styles.header}>Our Portfolio</h1>
-      <div className={styles.ProductList}>{productsView}</div>
+      <div className={styles.ProductList}>
+        {productsView}
+      </div>
     </div>
   );
 };

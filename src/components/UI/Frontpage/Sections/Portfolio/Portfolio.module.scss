@@ -1,8 +1,10 @@
 .ProductList {
-  padding-right: 10rem;
   display: flex;
-  width: 100%;
-  text-align: center;
+  flex-wrap: wrap;
+  // padding-right: 10rem;
+  // display: flex;
+  // width: 100%;
+  // text-align: center;
 }
 
 .header {

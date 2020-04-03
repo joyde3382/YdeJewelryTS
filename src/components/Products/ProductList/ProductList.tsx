@@ -13,10 +13,8 @@ const ProductList: React.FC = () => {
   }
 
   return (
-    <div className={styles.container}>
       <div className={styles.products}>
         {productsView}
-      </div>
     </div>
   );
 };

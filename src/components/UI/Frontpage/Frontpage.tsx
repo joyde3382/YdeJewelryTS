@@ -15,10 +15,10 @@ const Frontpage: React.FC = () => {
       <Row>
         <Welcome />
       </Row>
-      <Row className={styles.ProductList}>
+      <Row>
         <Portfolio />
       </Row>
-      <Row className={styles.ProductList}>
+      <Row>
         <FollowUs />
       </Row>
     </div>
