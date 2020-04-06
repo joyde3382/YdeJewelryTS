@@ -24,7 +24,7 @@ const ProductsPage: React.FC<{ currentCategory: string }> = (props: {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div>
-        <h1 style={{ display: "flex", justifyContent: "center" }}>Product</h1>
+        <h1 style={{ display: "flex", justifyContent: "center" }}>asd</h1>
         <div className={styles.ProductList}>{selectedProducts}</div>
       </div>
     </div>
