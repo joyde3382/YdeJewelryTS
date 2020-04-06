@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import ContextStore from "../../../Context";
-import { Row, Col } from "antd";
-import bgImage from "../../../assets/MountShasta2.jpg";
-import styles from "./Frontpage.module.scss";
+import { Row } from "antd";
 import Welcome from "./Sections/Welcome/Welcome";
 import Portfolio from "./Sections/Portfolio/Portfolio";
 import FollowUs from "./Sections/FollowUs/FollowUs";
@@ -15,10 +13,10 @@ const Frontpage: React.FC = () => {
       <Row style={{ display: "block" }}>
         <Welcome />
       </Row>
-      <Row>
+      <Row style={{ justifyContent: "center" }}>
         <Portfolio />
       </Row>
-      <Row>
+      <Row style={{ justifyContent: "center" }}>
         <FollowUs />
       </Row>
     </div>

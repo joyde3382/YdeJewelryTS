@@ -3,8 +3,7 @@ import { IDetailedProduct } from "../../../models/IDetailProduct";
 import React, { useContext } from "react";
 import ContextStore from "../../../Context";
 import { Link } from "react-router-dom";
-import { Card } from "antd";
-import { Button } from "office-ui-fabric-react/lib/Button";
+import { Card, Button } from "antd";
 
 const Product: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
   currentProduct: IDetailedProduct;
@@ -12,15 +11,17 @@ const Product: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
   let selectedProduct = props.currentProduct;
 
   const state = useContext(ContextStore);
-
+  state.detailProduct = selectedProduct;
   return (
     <div className={styles.product}>
       <Link to="/details">
         <Card
           hoverable
+          style={{ width: 200 }}
           cover={
             <img
               onClick={onImageClick}
+              style={{ marginTop: "1rem" }}
               src={selectedProduct?.img}
               alt="product"
             />
@@ -33,7 +34,8 @@ const Product: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
               <span className="mr-1">$</span>
               {selectedProduct?.price}
             </h5>
-            <Button type="primary">Buy</Button>
+
+            {/* <Button type="primary">Buy</Button> */}
           </div>
         </Card>
       </Link>
@@ -42,26 +44,9 @@ const Product: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
 
   function onImageClick() {
     state.setDetailedProducts(selectedProduct);
-    state.setCart([...state.cart, selectedProduct as IDetailedProduct]);
+    // state.setCart([...state.cart, selectedProduct as IDetailedProduct]);
     state.setModelOpen(true);
   }
 };
-//     <Card
-//         hoverable
-//         cover={<img onClick={} src={selectedProduct?.img} alt="product" />}
-//     >
-//         {/* card footer */}
-//         <div className={styles.footer} >
-//             <p className="align-self-center mb-0" >
-//                 {selectedProduct?.title}
-//             </p>
-//             <h5 className="text-blue font-italic mb-0" >
-//                 <span className="mr-1">$</span>
-//                 {selectedProduct?.price}
-//             </h5>
-//             <Button type="primary">Buy</Button>
-//         </div>
-//     </Card>
-// </Link>
 
 export default Product;

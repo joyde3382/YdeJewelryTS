@@ -5,7 +5,11 @@ import styles from "./Welcome.module.scss";
 const Welcome: React.FC = () => {
   return (
     <div>
-      <img className={styles.image} src={bgImage} alt="bgImage"></img>
+      <img className={styles.image} src={bgImage}>
+        {/* <View style={styles.backdropView}>
+        
+        </View> */}
+      </img>
     </div>
   );
 };

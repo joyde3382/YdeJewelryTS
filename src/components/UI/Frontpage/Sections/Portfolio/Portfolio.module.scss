@@ -10,3 +10,13 @@
 .header {
   text-align: center;
 }
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .ProductList {
+    display: block;
+    align-content: center;
+  }
+  // .header {
+  //   color: blue;
+  // }
+}

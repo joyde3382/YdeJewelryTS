@@ -1,21 +1,25 @@
-import React from 'react';
-import { IDetailedProduct } from './models/IDetailProduct';
+import React from "react";
+import { IDetailedProduct } from "./models/IDetailProduct";
 
 export interface IContextState {
-    products: IDetailedProduct[];
-    setProducts: (products: IDetailedProduct[]) => void;
+  products: IDetailedProduct[];
+  setProducts: (products: IDetailedProduct[]) => void;
 
-    detailProduct: IDetailedProduct | undefined;
-    setDetailedProducts: (products: IDetailedProduct | undefined) => void;
+  detailProduct: IDetailedProduct | undefined;
+  setDetailedProducts: (products: IDetailedProduct | undefined) => void;
 
-    cart: IDetailedProduct[];
-    setCart: (cart: IDetailedProduct[]) => void;
+  cart: IDetailedProduct[];
+  setCart: (cart: IDetailedProduct[]) => void;
+  //   addProductToCart: (cart: IDetailedProduct) => void;
 
-    modalOpen: boolean;
-    setModelOpen: (value: boolean) => void;
+  drawer: boolean;
+  setDrawer: (value: boolean) => void;
 
-    modalProduct: IDetailedProduct | undefined;
-    setModalProduct: (products: IDetailedProduct | undefined) => void;
+  modalOpen: boolean;
+  setModelOpen: (value: boolean) => void;
+
+  modalProduct: IDetailedProduct | undefined;
+  setModalProduct: (products: IDetailedProduct | undefined) => void;
 }
 
 const context: IContextState = {} as IContextState;

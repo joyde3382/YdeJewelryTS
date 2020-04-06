@@ -13,8 +13,11 @@ const ProductList: React.FC = () => {
   }
 
   return (
-      <div className={styles.products}>
-        {productsView}
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div>
+        <h1 style={{ display: "flex", justifyContent: "center" }}>Products</h1>
+        <div className={styles.ProductList}>{productsView}</div>
+      </div>
     </div>
   );
 };

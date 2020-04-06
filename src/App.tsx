@@ -1,17 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "./components/UI/Navbar/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import styles from "./App.module.scss";
 import { storeProducts } from "./data";
 import { IDetailedProduct } from "./models/IDetailProduct";
 import ContextStore, { IContextState } from "./Context";
-import ProductList from "./components/Products/ProductList/ProductList";
-import Details from "./components/Products/Details";
-import About from "./components/About/About";
-import Cart from "./components/Cart/Cart";
-import Default from "./components/Default";
-import Welcome from "./components/UI/Frontpage/Frontpage";
-import Foot from "./components/UI/Foot/Foot";
 import PageSetup from "./components/UI/PageSetup/PageSetup";
 
 const App: React.FC = () => {
@@ -20,6 +10,7 @@ const App: React.FC = () => {
   );
   const [detailProduct, setDetailedProducts] = useState<IDetailedProduct>();
   const [cart, setCart] = useState<IDetailedProduct[]>([]);
+  const [drawer, setDrawer] = useState<boolean>(false);
   const [modalOpen, setModelOpen] = useState<boolean>(false);
   const [modalProduct, setModelProduct] = useState<
     IDetailedProduct | undefined
@@ -28,14 +19,21 @@ const App: React.FC = () => {
   let initialState: IContextState = {
     products: products,
     setProducts: setProducts,
+
     detailProduct: detailProduct,
     setDetailedProducts: setDetailedProducts,
+
     cart: cart,
     setCart: setCart,
+
+    drawer: drawer,
+    setDrawer: setDrawer,
+
     modalOpen: modalOpen,
     setModelOpen: setModelOpen,
+
     modalProduct: modalProduct,
-    setModalProduct: setModelProduct
+    setModalProduct: setModelProduct,
   };
 
   return (

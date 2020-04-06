@@ -1,9 +1,14 @@
-.container {
-  font-weight: 700;
-}
-
-.products {
-  font-weight: 700;
+.ProductList {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .ProductList {
+    display: block;
+    align-content: center;
+  }
+  .header {
+    color: blue;
+  }
 }
