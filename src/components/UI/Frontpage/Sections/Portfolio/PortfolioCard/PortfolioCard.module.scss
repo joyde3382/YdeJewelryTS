@@ -1,0 +1,12 @@
+.product {
+  font-weight: 700;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.cutText {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}

@@ -1,12 +1,81 @@
-.image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.App {
+  height: 50vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
-.h2 {
-  position: absolute;
-  top: 200px;
-  left: 0;
-  width: 100%;
+.AppContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  padding: 40px;
+  padding-top: 12rem;
 }
+
+.TextStyling {
+  color: white;
+  font-size: 40px;
+}
+.paragraph {
+  color: white;
+  font-family: "Brandon Grotesque";
+  font-size: 20px;
+}
+
+.Card {
+  width: 35%;
+}
+
+@media (max-width: 650px) {
+  .App {
+    background-position: center center;
+  }
+
+  .App-content {
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .TextStyling {
+    color: white;
+    font-size: 20px;
+  }
+  .paragraph {
+    color: white;
+    font-family: "Brandon Grotesque";
+    font-size: 10px;
+  }
+
+  .AppContent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    padding: 40px;
+    padding-top: 5rem;
+  }
+
+  .Card {
+    width: 50%;
+  }
+}
+
+// .image {
+//   background-image: url(../../../../../assets/wideImage3.jpg);
+//   .size {
+//     height: 100%;
+//     width: 100%;
+//     object-fit: cover;
+//   }
+// }
+
+// .h2 {
+//   position: absolute;
+//   top: 200px;
+//   left: 0;
+//   width: 100%;
+// }
