@@ -1,16 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 import ContextStore from "../../Context";
 import { IDetailedProduct } from "../../models/IDetailProduct";
-import { Card, Button } from "antd";
-import { detailProduct } from "../../data";
-import Cart from "../Cart/Cart";
+import { Button } from "antd";
 
-const Details: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
-  currentProduct: IDetailedProduct;
-}) => {
-  // let selectedProduct = props.currentProduct;
-
+const Details: React.FC<{ currentProduct: IDetailedProduct }> = () => {
   const state = useContext(ContextStore);
   let selectedProduct = state.detailProduct;
 

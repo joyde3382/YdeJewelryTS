@@ -7,8 +7,5 @@ export interface IDetailedProduct {
   count: number;
   inCart: boolean;
   category: string;
+  color: string;
 }
-
-// export interface IProductCategory {
-//   category: string;
-// }

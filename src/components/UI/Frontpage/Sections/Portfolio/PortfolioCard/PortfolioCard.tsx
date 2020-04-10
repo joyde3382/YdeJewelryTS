@@ -7,9 +7,10 @@ import { Card, Button } from "antd";
 import Paragraph from "antd/lib/skeleton/Paragraph";
 import Meta from "antd/lib/card/Meta";
 
-const PortfolioCard: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
+const PortfolioCard: React.FC<{
   currentProduct: IDetailedProduct;
-}) => {
+  portfolio?: boolean;
+}> = (props: { currentProduct: IDetailedProduct }) => {
   let selectedProduct = props.currentProduct;
 
   const state = useContext(ContextStore);

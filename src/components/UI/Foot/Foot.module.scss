@@ -3,8 +3,13 @@
 }
 
 .column {
-  float: left;
+  // float: left;
+
   width: 33.33%;
+}
+
+.headers {
+  text-decoration: underline;
 }
 
 .row:after {

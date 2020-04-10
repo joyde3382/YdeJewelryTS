@@ -1,5 +1,6 @@
 import React from "react";
 import { IDetailedProduct } from "./models/IDetailProduct";
+import { IFilter } from "./models/IFilter";
 
 export interface IContextState {
   products: IDetailedProduct[];
@@ -7,6 +8,12 @@ export interface IContextState {
 
   detailProduct: IDetailedProduct | undefined;
   setDetailedProducts: (products: IDetailedProduct | undefined) => void;
+
+  currentCategory: string | undefined;
+  setCurrentCategory: (value: string) => void;
+
+  filter: IFilter | undefined;
+  setFilter: (filter: IFilter) => void;
 
   cart: IDetailedProduct[];
   setCart: (cart: IDetailedProduct[]) => void;

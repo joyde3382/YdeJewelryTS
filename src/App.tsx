@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { storeProducts } from "./data";
 import { IDetailedProduct } from "./models/IDetailProduct";
+import { IFilter } from "./models/IFilter";
 import ContextStore, { IContextState } from "./Context";
 import PageSetup from "./components/UI/PageSetup/PageSetup";
 
@@ -9,7 +10,9 @@ const App: React.FC = () => {
     getAllProducts()
   );
   const [detailProduct, setDetailedProducts] = useState<IDetailedProduct>();
+  const [currentCategory, setCurrentCategory] = useState<string>("all");
   const [cart, setCart] = useState<IDetailedProduct[]>([]);
+  const [filter, setFilter] = useState<IFilter>();
   const [drawer, setDrawer] = useState<boolean>(false);
   const [modalOpen, setModelOpen] = useState<boolean>(false);
   const [modalProduct, setModelProduct] = useState<
@@ -23,8 +26,14 @@ const App: React.FC = () => {
     detailProduct: detailProduct,
     setDetailedProducts: setDetailedProducts,
 
+    currentCategory: currentCategory,
+    setCurrentCategory: setCurrentCategory,
+
     cart: cart,
     setCart: setCart,
+
+    filter: filter,
+    setFilter: setFilter,
 
     drawer: drawer,
     setDrawer: setDrawer,

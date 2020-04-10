@@ -3,7 +3,7 @@ import { IDetailedProduct } from "../../../models/IDetailProduct";
 import React, { useContext } from "react";
 import ContextStore from "../../../Context";
 import { Link } from "react-router-dom";
-import { Card, Button } from "antd";
+import { Card } from "antd";
 
 const Product: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
   currentProduct: IDetailedProduct;
@@ -34,8 +34,6 @@ const Product: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
               <span className="mr-1">$</span>
               {selectedProduct?.price}
             </h5>
-
-            {/* <Button type="primary">Buy</Button> */}
           </div>
         </Card>
       </Link>
@@ -44,7 +42,6 @@ const Product: React.FC<{ currentProduct: IDetailedProduct }> = (props: {
 
   function onImageClick() {
     state.setDetailedProducts(selectedProduct);
-    // state.setCart([...state.cart, selectedProduct as IDetailedProduct]);
     state.setModelOpen(true);
   }
 };
