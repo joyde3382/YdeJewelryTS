@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { storeProducts } from "./data";
+import React, { useState, useEffect } from "react";
 import { IDetailedProduct } from "./models/IDetailProduct";
 import { IFilter } from "./models/IFilter";
 import ContextStore, { IContextState } from "./Context";
 import PageSetup from "./components/UI/PageSetup/PageSetup";
+import { storeProducts } from "./data";
+import { IProductService, ProductService } from "./services/ProductService";
 
 const App: React.FC = () => {
-  const [products, setProducts] = useState<IDetailedProduct[]>(
-    getAllProducts()
-  );
+  const service: IProductService = new ProductService();
+
+  const [products, setProducts] = useState<IDetailedProduct[]>({} as any);
   const [detailProduct, setDetailedProducts] = useState<IDetailedProduct>();
   const [currentCategory, setCurrentCategory] = useState<string>("all");
   const [cart, setCart] = useState<IDetailedProduct[]>([]);
@@ -45,14 +46,20 @@ const App: React.FC = () => {
     setModalProduct: setModelProduct,
   };
 
+  useEffect(() => {
+    getAllProducts().then((result) => {
+      setProducts(result);
+    });
+  });
+
   return (
     <ContextStore.Provider value={initialState}>
       <PageSetup />
     </ContextStore.Provider>
   );
 
-  function getAllProducts(): IDetailedProduct[] {
-    return storeProducts;
+  async function getAllProducts(): Promise<IDetailedProduct[]> {
+    return service.getAllProducts();
   }
 };
 
