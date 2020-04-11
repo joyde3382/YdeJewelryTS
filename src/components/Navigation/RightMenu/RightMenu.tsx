@@ -1,4 +1,4 @@
-import React, { Component, useContext } from "react";
+import React, { useContext } from "react";
 import { Menu } from "antd";
 import { Link } from "react-router-dom";
 import ContextStore from "../../../Context";

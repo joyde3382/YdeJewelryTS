@@ -8,6 +8,10 @@ const ProductList: React.FC = () => {
   let products = state.products;
   let productsView: JSX.Element[] = [];
 
+  if (!products) {
+    return <div></div>;
+  }
+
   for (let i = 0; i !== products.length; i++) {
     productsView.push(<Product currentProduct={products[i]} />);
   }

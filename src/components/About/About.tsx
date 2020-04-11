@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import ContextStore from '../../Context';
+import React from 'react';
 
 const About: React.FC = () => {
     return (

@@ -3,25 +3,21 @@ import { IDetailedProduct } from "./models/IDetailProduct";
 import { IFilter } from "./models/IFilter";
 import ContextStore, { IContextState } from "./Context";
 import PageSetup from "./components/UI/PageSetup/PageSetup";
-import { storeProducts } from "./data";
 import { IProductService, ProductService } from "./services/ProductService";
 
 const App: React.FC = () => {
   const service: IProductService = new ProductService();
-
-  const [products, setProducts] = useState<IDetailedProduct[]>({} as any);
+  const [products, setProducts] = useState<IDetailedProduct[]>();
   const [detailProduct, setDetailedProducts] = useState<IDetailedProduct>();
   const [currentCategory, setCurrentCategory] = useState<string>("all");
   const [cart, setCart] = useState<IDetailedProduct[]>([]);
   const [filter, setFilter] = useState<IFilter>();
   const [drawer, setDrawer] = useState<boolean>(false);
   const [modalOpen, setModelOpen] = useState<boolean>(false);
-  const [modalProduct, setModelProduct] = useState<
-    IDetailedProduct | undefined
-  >();
+  const [modalProduct, setModelProduct] = useState<IDetailedProduct | undefined>();
 
   let initialState: IContextState = {
-    products: products,
+    products: products as any,
     setProducts: setProducts,
 
     detailProduct: detailProduct,
@@ -47,10 +43,17 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    getAllProducts().then((result) => {
-      setProducts(result);
-    });
+    if (products) {
+      return;
+    }
+    (async () => {
+      await getAllProducts();
+    })();
   });
+
+  if (!products) {
+    return <div></div>;
+  }
 
   return (
     <ContextStore.Provider value={initialState}>
@@ -58,9 +61,10 @@ const App: React.FC = () => {
     </ContextStore.Provider>
   );
 
-  async function getAllProducts(): Promise<IDetailedProduct[]> {
-    return service.getAllProducts();
+  async function getAllProducts() {
+    setProducts(await service.getAllProducts());
   }
+
 };
 
 export default App;

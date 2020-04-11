@@ -43,7 +43,7 @@ const Details: React.FC<{ currentProduct: IDetailedProduct }> = () => {
   );
 
   function onButtonClick() {
-    if (state.cart === undefined || state.cart.length == 0) {
+    if (state.cart === undefined || state.cart.length === 0) {
       state.setCart([selectedProduct as IDetailedProduct]);
     } else {
       state.setCart([...state.cart, selectedProduct as IDetailedProduct]);

@@ -5,7 +5,6 @@ import * as serviceWorker from "./serviceWorker";
 
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
-import gql from "graphql-tag";
 const client = new ApolloClient({
   uri:
     "https://api-eu-central-1.graphcms.com/v2/ck8igwodn02co01xm7ocwbu9l/master",

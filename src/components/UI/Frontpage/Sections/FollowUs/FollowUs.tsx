@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "./FollowUs.module.scss";
-import { Row } from "antd";
 import fbIcon from "../../../../../assets/fbIcon.png";
 import insIcon from "../../../../../assets/InsIcon.png";
 import pinIcon from "../../../../../assets/pinIcon.png";
 import idaImage from "../../../../../assets/IdaImage.jpg";
-import { Link } from "react-router-dom";
 import FollowUsCard from "./FollowUsCard/FollowUsCard";
 
 const FollowUs: React.FC = () => {
@@ -13,7 +11,7 @@ const FollowUs: React.FC = () => {
     <div>
       <h1 className={styles.header}>Join our community</h1>
       <div style={{ display: "flex" }}>
-        <img style={{ width: 240, paddingRight: "3rem" }} src={idaImage}></img>
+        <img alt={""} style={{ width: 240, paddingRight: "3rem" }} src={idaImage}></img>
         <div>
           <FollowUsCard
             linkUrl="https://www.facebook.com"

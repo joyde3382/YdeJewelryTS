@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "antd/dist/antd.css";
-import { Menu, Button, Drawer } from "antd";
+import { Button, Drawer } from "antd";
 import styles from "./Navbar.module.scss";
 import ContextStore from "../../../Context";
 import LeftMenu from "../LeftMenu/LeftMenu";

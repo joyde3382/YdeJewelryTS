@@ -17,12 +17,20 @@ export class ProductService implements IProductService {
   }
 
   public async getAllProducts(): Promise<IDetailedProduct[]> {
+    // let cachedData = window.localStorage.getItem("uniquedatakey");
+    // let currentTime = new Date();
+    // Set timestate on data when saving to local storage => done
+    // check current time against local cache time
+    // compare dates if current is fx more than 1h old else get new data
+
     const data = await this.bucket.getObjects({
       type: "products",
       limit: 20,
     });
 
-    console.log(data.objects[0].metadata as IDetailedProduct[]);
+    data.time = new Date();
+    window.localStorage.setItem("uniquedatakey", JSON.stringify(data));
+    
     return [
       data.objects[0].metadata,
       data.objects[1].metadata,

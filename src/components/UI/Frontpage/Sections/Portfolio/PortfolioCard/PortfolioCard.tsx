@@ -3,9 +3,7 @@ import { IDetailedProduct } from "../../../../../../models/IDetailProduct";
 import React, { useContext } from "react";
 import ContextStore from "../../../../../../Context";
 import { Link } from "react-router-dom";
-import { Card, Button } from "antd";
-import Paragraph from "antd/lib/skeleton/Paragraph";
-import Meta from "antd/lib/card/Meta";
+import { Card } from "antd";
 
 const PortfolioCard: React.FC<{
   currentProduct: IDetailedProduct;
