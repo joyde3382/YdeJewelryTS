@@ -1,8 +1,9 @@
 export interface IDetailedProduct {
   id: string;
-  img: string;
-  info: string;
+  image: string;
+  description: string;
   price: number;
+  pricetag: string;
   title: string;
   count: number;
   inCart: boolean;

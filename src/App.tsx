@@ -12,9 +12,12 @@ const App: React.FC = () => {
   const [currentCategory, setCurrentCategory] = useState<string>("all");
   const [cart, setCart] = useState<IDetailedProduct[]>([]);
   const [filter, setFilter] = useState<IFilter>();
+  const [filterChecked, setFilterChecked] = useState<boolean>(false);
   const [drawer, setDrawer] = useState<boolean>(false);
   const [modalOpen, setModelOpen] = useState<boolean>(false);
-  const [modalProduct, setModelProduct] = useState<IDetailedProduct | undefined>();
+  const [modalProduct, setModelProduct] = useState<
+    IDetailedProduct | undefined
+  >();
 
   let initialState: IContextState = {
     products: products as any,
@@ -31,6 +34,9 @@ const App: React.FC = () => {
 
     filter: filter,
     setFilter: setFilter,
+
+    filterChecked: filterChecked,
+    setFilterChecked: setFilterChecked,
 
     drawer: drawer,
     setDrawer: setDrawer,
@@ -64,7 +70,6 @@ const App: React.FC = () => {
   async function getAllProducts() {
     setProducts(await service.getAllProducts());
   }
-
 };
 
 export default App;

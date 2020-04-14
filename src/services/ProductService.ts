@@ -28,12 +28,19 @@ export class ProductService implements IProductService {
       limit: 20,
     });
 
-    data.time = new Date();
-    window.localStorage.setItem("uniquedatakey", JSON.stringify(data));
-    
-    return [
-      data.objects[0].metadata,
-      data.objects[1].metadata,
-    ] as IDetailedProduct[];
+    // data.time = new Date();
+    // window.localStorage.setItem("uniquedatakey", JSON.stringify(data));
+
+    let transformedData = [] as IDetailedProduct[];
+    for (let i = 0; i < data.objects.length; i++) {
+      let tempObject = data.objects[i].metadata;
+      tempObject.image = tempObject.image.url;
+      transformedData.push(tempObject);
+    }
+
+    console.log("transforming data");
+    console.log(transformedData);
+
+    return transformedData;
   }
 }

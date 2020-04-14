@@ -15,6 +15,9 @@ export interface IContextState {
   filter: IFilter | undefined;
   setFilter: (filter: IFilter) => void;
 
+  filterChecked: boolean;
+  setFilterChecked: (filterChecked: boolean) => void;
+
   cart: IDetailedProduct[];
   setCart: (cart: IDetailedProduct[]) => void;
   //   addProductToCart: (cart: IDetailedProduct) => void;

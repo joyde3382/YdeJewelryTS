@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ContextStore from "../../../Context";
-import Product from "../Product/Product";
+import Product from "../Product/ProductCard";
 import styles from "./ProductList.module.scss";
 
 const ProductList: React.FC = () => {
@@ -13,7 +13,10 @@ const ProductList: React.FC = () => {
   }
 
   for (let i = 0; i !== products.length; i++) {
-    productsView.push(<Product currentProduct={products[i]} />);
+    productsView
+      .push
+      // <Product currentProduct={products[i]} portfolio={false} />
+      ();
   }
 
   return (

@@ -17,19 +17,19 @@
 
 .TextStyling {
   color: white;
-  font-size: 40px;
+  font-size: 30px;
 }
 .paragraph {
   color: white;
   font-family: "Brandon Grotesque";
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .Card {
-  width: 35%;
+  width: 300px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 767px) {
   .App {
     background-position: center center;
   }
@@ -39,29 +39,26 @@
     justify-content: center;
   }
 
-  .TextStyling {
-    color: white;
-    font-size: 20px;
-  }
-  .paragraph {
-    color: white;
-    font-family: "Brandon Grotesque";
-    font-size: 10px;
-  }
+  // .TextStyling {
+  //   font-size: 20px;
+  // }
+  // .paragraph {
+  //   font-size: 10px;
+  // }
 
-  .AppContent {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-    padding: 40px;
-    padding-top: 5rem;
-  }
+  // .AppContent {
+  //   height: 100%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: flex-start;
+  //   align-items: left;
+  //   padding: 40px;
+  //   padding-top: 5rem;
+  // }
 
-  .Card {
-    width: 50%;
-  }
+  // .Card {
+  //   width: 50%;
+  // }
 }
 
 // .image {

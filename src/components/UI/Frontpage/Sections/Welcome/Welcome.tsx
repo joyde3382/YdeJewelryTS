@@ -34,7 +34,7 @@ const Welcome: React.FC = () => {
             awe and amazement of this brilliant website
           </p>
           <Button>
-            <Link to="/products">Shop All</Link>
+            <Link to="/products">ShopAll</Link>
           </Button>
         </Card>
       </div>

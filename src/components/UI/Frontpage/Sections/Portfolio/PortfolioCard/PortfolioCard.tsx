@@ -23,7 +23,7 @@ const PortfolioCard: React.FC<{
             <img
               onClick={onImageClick}
               style={{ marginTop: "1rem" }}
-              src={selectedProduct?.img}
+              src={selectedProduct?.image}
               alt="product"
             />
           }
@@ -31,7 +31,7 @@ const PortfolioCard: React.FC<{
           {/* card footer */}
           <div className={styles.footer}>
             <h3>{selectedProduct?.title}</h3>
-            <p className={styles.cutText}>{selectedProduct?.info}</p>
+            <p className={styles.cutText}>{selectedProduct?.description}</p>
             {/* <Meta
              
               title="Card title"

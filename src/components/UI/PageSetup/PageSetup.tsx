@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "../../Navigation/Navbar/Navbar";
-import Details from "../../Products/Details";
+import Details from "../../Products/Details/Details";
 import About from "../../About/About";
 import Cart from "../../Cart/Cart";
 import Default from "../../Default";
@@ -26,9 +26,6 @@ const PageSetup: React.FC = () => {
           <Switch>
             <Route exact path="/" component={Frontpage} />
             <Route exact path="/products" component={ProductsPage} />
-            <Route path="/products/jewelry" component={ProductsPage} />
-            <Route path="/products/paintings" component={ProductsPage} />
-            <Route path="/products/ceramics" component={ProductsPage} />
             <Route path="/details" component={Details} />
             <Route path="/about" component={About} />
             <Route path="/cart" component={Cart} />

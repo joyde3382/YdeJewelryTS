@@ -1,24 +1,43 @@
 import React, { useContext } from "react";
 import ContextStore from "../../../../../Context";
-import Product from "../../../../Products/Product/Product";
+import Product from "../../../../Products/Product/ProductCard";
 import styles from "./Products.module.scss";
+import { CardTypes } from "../../../../../models/CardTypes";
 
 const Products: React.FC = () => {
   const state = useContext(ContextStore);
 
-  const productCategory = state.filter?.category;
   const filter = state.filter;
-  //   const productColor =
   const products = state.products;
 
   let selectedProducts: JSX.Element[] = [];
 
   for (let i = 0; i !== products.length; i++) {
-    if (productCategory === "all") {
-      selectedProducts.push(<Product currentProduct={products[i]} />);
-    } else if (products[i].category === productCategory) {
-      selectedProducts.push(<Product currentProduct={products[i]} />);
+    if (filter?.category === "all") {
+      selectedProducts.push(
+        <Product
+          currentProduct={products[i]}
+          cardType={CardTypes.productsOverView}
+        />
+      );
+    } else if (
+      (products[i].category === filter?.category ||
+        filter?.category === undefined) &&
+      (products[i].color === filter?.color || filter?.color === undefined) &&
+      (products[i].pricetag === filter?.priceTag ||
+        filter?.priceTag === undefined)
+    ) {
+      selectedProducts.push(
+        <Product
+          currentProduct={products[i]}
+          cardType={CardTypes.productsOverView}
+        />
+      );
     }
+  }
+
+  if (selectedProducts.length === 0) {
+    selectedProducts.push(<div>No products matching filter</div>);
   }
 
   console.log(filter);
@@ -27,7 +46,7 @@ const Products: React.FC = () => {
     <div
       style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
     >
-      <h1>{state.filter?.category}</h1>
+      {/* <h1 style={{ fontSize: "70px" }}>Products</h1> */}
       <div className={styles.ProductList}>{selectedProducts}</div>
     </div>
   );

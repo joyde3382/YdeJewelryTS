@@ -22,7 +22,7 @@ const Cart: React.FC<{ currentProduct: IDetailedProduct }> = () => {
           <tr>
             <td>{item.title}</td>
             <td>{item.price}</td>
-            <img alt={""} style={{ width: 60 }} src={item.img} />
+            <img alt={""} style={{ width: 60 }} src={item.image} />
           </tr>
         ))}
       </table>

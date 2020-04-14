@@ -17,7 +17,7 @@ const ProductModal: React.FC = () => {
           >
             <h5>item added to the cart</h5>
             <img
-              src={selectedProduct?.img}
+              src={selectedProduct?.image}
               className="img-fluid"
               alt="product"
             />

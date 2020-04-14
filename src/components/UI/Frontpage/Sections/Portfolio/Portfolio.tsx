@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import ContextStore from "../../../../../Context";
 import styles from "./Portfolio.module.scss";
 import PortfolioCard from "./PortfolioCard/PortfolioCard";
+import ProductCard from "../../../../Products/Product/ProductCard";
+import { CardTypes } from "../../../../../models/CardTypes";
 
 const Portfolio: React.FC = () => {
   const state = useContext(ContextStore);
@@ -9,7 +11,12 @@ const Portfolio: React.FC = () => {
   let productsView: JSX.Element[] = [];
 
   for (let i = 0; i !== products.length; i++) {
-    productsView.push(<PortfolioCard currentProduct={products[i]} />);
+    productsView.push(
+      <ProductCard
+        currentProduct={products[i]}
+        cardType={CardTypes.portfolio}
+      />
+    );
   }
 
   return (
