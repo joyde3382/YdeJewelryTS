@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import desktopImage from "../../../../../assets/wideImage3.jpg";
+import desktopImage2 from "../../../../../assets/wideImage3.jpg";
 import mobileImage from "../../../../../assets/wideImage3-mobile.png";
 import styles from "./Welcome.module.scss";
 import { Card, Button } from "antd";

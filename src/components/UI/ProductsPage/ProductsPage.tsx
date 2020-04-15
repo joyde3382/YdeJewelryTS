@@ -2,9 +2,7 @@ import React from "react";
 import Products from "./Sections/Products/Products";
 import Filters from "./Sections/Filters/Filters";
 import productsImage from "../../../assets/productsImage2.jpg";
-import { Layout } from "antd";
 import styles from "./ProductsPage.module.scss";
-const { Content, Sider } = Layout;
 
 const ProductsPage: React.FC<{ currentCategory: string }> = () => {
   return (
@@ -12,6 +10,7 @@ const ProductsPage: React.FC<{ currentCategory: string }> = () => {
       style={{
         backgroundColor: "white",
         justifyContent: "center",
+        width: "100%",
       }}
     >
       <div

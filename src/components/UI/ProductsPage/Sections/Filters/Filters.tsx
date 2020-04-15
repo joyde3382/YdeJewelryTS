@@ -2,14 +2,12 @@ import React, { useContext } from "react";
 import { Menu, Radio, Button } from "antd";
 import SubMenu from "antd/lib/menu/SubMenu";
 import ContextStore from "../../../../../Context";
-import FilterCheckbox from "./FilterCheckbox";
-import { Link } from "react-router-dom";
 
 const Filters: React.FC = () => {
   const state = useContext(ContextStore);
   return (
-    <div>
-      <Menu style={{ border: "white", width: "150px" }} mode="inline">
+    <div style={{ width: "150px" }}>
+      <Menu style={{ border: "white" }} mode="inline">
         <SubMenu
           key="sub1"
           title={
@@ -19,6 +17,13 @@ const Filters: React.FC = () => {
           }
         >
           <Radio.Group style={{ paddingLeft: "24px" }} onChange={onChange}>
+            <Radio
+              style={{ display: "block" }}
+              value={"anyCat"}
+              checked={state.filter?.category === "any" ? true : false}
+            >
+              Any
+            </Radio>
             <Radio
               style={{ display: "block" }}
               value={"jewelry"}
@@ -52,6 +57,13 @@ const Filters: React.FC = () => {
           }
         >
           <Radio.Group style={{ paddingLeft: "24px" }} onChange={onChange}>
+            <Radio
+              style={{ display: "block" }}
+              value={"anyCol"}
+              checked={state.filter?.color === "any" ? true : false}
+            >
+              Any
+            </Radio>
             <Radio style={{ display: "block" }} value={"white"}>
               White
             </Radio>
@@ -73,6 +85,13 @@ const Filters: React.FC = () => {
           }
         >
           <Radio.Group style={{ paddingLeft: "24px" }} onChange={onChange}>
+            <Radio
+              style={{ display: "block" }}
+              value={"anyPrice"}
+              checked={state.filter?.priceTag === "any" ? true : false}
+            >
+              Any
+            </Radio>
             <Radio style={{ display: "block" }} value={"u10"}>
               Under $10
             </Radio>
@@ -113,20 +132,15 @@ const Filters: React.FC = () => {
           </Radio.Group>
         </SubMenu>
       </Menu>
-      <Link to="/products">
-        <Button onClick={resetFilter}>Reset</Button>
-      </Link>
     </div>
   );
-
-  function resetFilter() {
-    state.setFilter({});
-    console.log(state.filter);
-  }
 
   function onChange(e: any) {
     console.log("Radio checked", e);
     switch (e.target.value) {
+      case "anyCat":
+        filterCategory("any");
+        break;
       case "jewelry":
         filterCategory("jewelry");
         console.log("filter jewelry");
@@ -137,6 +151,9 @@ const Filters: React.FC = () => {
       case "ceramics":
         filterCategory("ceramics");
         break;
+      case "anyCol":
+        filterColor("any");
+        break;
       case "white":
         filterColor("white");
         break;
@@ -145,6 +162,9 @@ const Filters: React.FC = () => {
         break;
       case "orange":
         filterColor("orange");
+        break;
+      case "anyPrice":
+        filterPrice("any");
         break;
       case "u10":
         filterPrice("low");
@@ -155,6 +175,7 @@ const Filters: React.FC = () => {
       case "20-30":
         filterPrice("high");
         break;
+
       default:
         filterCategory("all");
         break;

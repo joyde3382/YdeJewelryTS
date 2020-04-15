@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ContextStore from "../../../Context";
 import { IDetailedProduct } from "../../../models/IDetailProduct";
-import { Button, Divider } from "antd";
+import { Button } from "antd";
 import styles from "./Details.module.scss";
 
 const DetailsCard: React.FC = () => {
@@ -27,8 +27,6 @@ const DetailsCard: React.FC = () => {
     } else {
       state.setCart([...state.cart, selectedProduct as IDetailedProduct]);
     }
-
-    // state.detailProduct?.count = 1;
 
     console.log(selectedProduct);
     console.log(state.cart);

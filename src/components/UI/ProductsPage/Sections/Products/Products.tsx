@@ -22,10 +22,14 @@ const Products: React.FC = () => {
       );
     } else if (
       (products[i].category === filter?.category ||
-        filter?.category === undefined) &&
-      (products[i].color === filter?.color || filter?.color === undefined) &&
+        filter?.category === undefined ||
+        filter?.category === "any") &&
+      (products[i].color === filter?.color ||
+        filter?.color === undefined ||
+        filter?.color === "any") &&
       (products[i].pricetag === filter?.priceTag ||
-        filter?.priceTag === undefined)
+        filter?.priceTag === undefined ||
+        filter?.priceTag === "any")
     ) {
       selectedProducts.push(
         <Product

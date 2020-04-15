@@ -6,16 +6,15 @@ import FollowUs from "./Sections/FollowUs/FollowUs";
 
 const Frontpage: React.FC = () => {
   return (
-    <div>
-      <Row style={{ display: "block" }}>
+    <div style={{ marginBottom: "1rem" }}>
+      <div style={{ justifyContent: "center", alignContent: "center" }}>
         <Welcome />
-      </Row>
-      <Row style={{ justifyContent: "center" }}>
-        <Portfolio />
-      </Row>
-      <Row style={{ justifyContent: "center" }}>
+      </div>
+      <Portfolio />
+
+      <div style={{ justifyContent: "center", display: "flex" }}>
         <FollowUs />
-      </Row>
+      </div>
     </div>
   );
 };
