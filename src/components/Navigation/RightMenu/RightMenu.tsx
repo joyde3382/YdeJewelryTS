@@ -37,6 +37,9 @@ export const RightMenu: React.FC = () => {
       <Menu.Item key="contact">
         <Link to="/Contact">Contact</Link>
       </Menu.Item>
+      <Menu.Item key="cart">
+        <Link to="/Cart">Cart</Link>
+      </Menu.Item>
     </Menu>
   );
 };

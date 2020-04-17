@@ -7,23 +7,26 @@ import { Card, Button } from "antd";
 import { Link } from "react-router-dom";
 
 const Welcome: React.FC = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const imageUrl = windowWidth >= 650 ? desktopImage : mobileImage;
+  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // const imageUrl = windowWidth >= 650 ? desktopImage : mobileImage;
 
-  const handleWindowResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
+  // const handleWindowResize = () => {
+  //   setWindowWidth(window.innerWidth);
+  // };
 
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
+  // useEffect(() => {
+  //   window.addEventListener("resize", handleWindowResize);
 
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  });
+  //   return () => {
+  //     window.removeEventListener("resize", handleWindowResize);
+  //   };
+  // });
 
   return (
-    <div className={styles.App} style={{ backgroundImage: `url(${imageUrl})` }}>
+    <div
+      className={styles.App}
+      style={{ backgroundImage: `url(${desktopImage})` }}
+    >
       <div className={styles.AppContent}>
         <Card
           style={{ backgroundColor: "transparent", border: "transparent" }}

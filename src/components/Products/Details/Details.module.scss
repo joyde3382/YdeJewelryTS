@@ -9,5 +9,22 @@
 .verticalCenter {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+}
+
+.roundedImage {
+  border-radius: 50%;
+  width: 100px;
+}
+
+.cutTextSmall {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  width: 100px;
+}
+
+.product {
+  margin: 1.5rem;
 }
