@@ -6,8 +6,8 @@ export interface IContextState {
   products: IDetailedProduct[];
   setProducts: (products: IDetailedProduct[]) => void;
 
-  detailProduct: IDetailedProduct | undefined;
-  setDetailedProducts: (products: IDetailedProduct | undefined) => void;
+  detailProduct: IDetailedProduct | any;
+  setDetailedProducts: (products: IDetailedProduct | any) => void;
 
   currentCategory: string | undefined;
   setCurrentCategory: (value: string) => void;
@@ -24,12 +24,6 @@ export interface IContextState {
 
   drawer: boolean;
   setDrawer: (value: boolean) => void;
-
-  modalOpen: boolean;
-  setModelOpen: (value: boolean) => void;
-
-  modalProduct: IDetailedProduct | undefined;
-  setModalProduct: (products: IDetailedProduct | undefined) => void;
 }
 
 const context: IContextState = {} as IContextState;

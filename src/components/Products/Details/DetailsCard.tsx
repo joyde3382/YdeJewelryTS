@@ -17,15 +17,22 @@ const DetailsCard: React.FC = () => {
       </h5>
       <p className={styles.cutText}>{selectedProduct?.description}</p>
 
-      <Button onClick={onButtonClick}>Add to cart</Button>
+      <Button onClick={addToCart}>Add to cart</Button>
     </div>
   );
 
-  function onButtonClick() {
-    if (state.cart === undefined || state.cart.length === 0) {
+  function addToCart() {
+    if (state.cart.length === 0) {
+      selectedProduct.count++;
       state.setCart([selectedProduct as IDetailedProduct]);
     } else {
-      state.setCart([...state.cart, selectedProduct as IDetailedProduct]);
+      if (state.cart.indexOf(selectedProduct) !== -1) {
+        selectedProduct.count++;
+      } else {
+        selectedProduct.count++;
+        state.setCart([...state.cart, selectedProduct as IDetailedProduct]);
+      }
+      console.log(selectedProduct);
     }
 
     console.log(selectedProduct);

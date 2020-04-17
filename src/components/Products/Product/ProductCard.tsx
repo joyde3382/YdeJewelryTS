@@ -59,7 +59,6 @@ const ProductCard: React.FC<{
 
   function onImageClick() {
     state.setDetailedProducts(selectedProduct);
-    state.setModelOpen(true);
   }
 };
 

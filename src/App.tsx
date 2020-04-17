@@ -14,13 +14,9 @@ const App: React.FC = () => {
   const [filter, setFilter] = useState<IFilter>();
   const [filterChecked, setFilterChecked] = useState<boolean>(false);
   const [drawer, setDrawer] = useState<boolean>(false);
-  const [modalOpen, setModelOpen] = useState<boolean>(false);
-  const [modalProduct, setModelProduct] = useState<
-    IDetailedProduct | undefined
-  >();
 
   let initialState: IContextState = {
-    products: products as any,
+    products: products as IDetailedProduct[],
     setProducts: setProducts,
 
     detailProduct: detailProduct,
@@ -40,12 +36,6 @@ const App: React.FC = () => {
 
     drawer: drawer,
     setDrawer: setDrawer,
-
-    modalOpen: modalOpen,
-    setModelOpen: setModelOpen,
-
-    modalProduct: modalProduct,
-    setModalProduct: setModelProduct,
   };
 
   useEffect(() => {

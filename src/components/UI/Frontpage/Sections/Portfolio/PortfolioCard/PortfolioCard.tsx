@@ -32,12 +32,6 @@ const PortfolioCard: React.FC<{
           <div className={styles.footer}>
             <h3>{selectedProduct?.title}</h3>
             <p className={styles.cutText}>{selectedProduct?.description}</p>
-            {/* <Meta
-             
-              title="Card title"
-              description={selectedProduct?.info}
-            /> */}
-            {/* <Button type="primary">Buy</Button> */}
           </div>
         </Card>
       </Link>
@@ -46,8 +40,6 @@ const PortfolioCard: React.FC<{
 
   function onImageClick() {
     state.setDetailedProducts(selectedProduct);
-    // state.setCart([...state.cart, selectedProduct as IDetailedProduct]);
-    state.setModelOpen(true);
   }
 };
 
