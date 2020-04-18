@@ -11,7 +11,7 @@ import Foot from "../Foot/Foot";
 
 import styles from "./PageSetup.module.scss";
 import ProductsPage from "../ProductsPage/ProductsPage";
-import Checkout from "../../Payment/Checkout/Checkout";
+import Information from "../../Payment/Checkout/Information";
 import Payment from "../../Payment/Payment/Payment";
 import Delivery from "../../Payment/Delivery/Delivery";
 
@@ -32,7 +32,7 @@ const PageSetup: React.FC = () => {
             <Route path="/details" component={Details} />
             <Route path="/about" component={About} />
             <Route path="/cart" component={Cart} />
-            <Route path="/Checkout" component={Checkout} />
+            <Route path="/Information" component={Information} />
             <Route path="/Payment" component={Payment} />
             <Route path="/Delivery" component={Delivery} />
             <Route component={Default} />

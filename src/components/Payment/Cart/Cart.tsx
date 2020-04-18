@@ -5,6 +5,7 @@ import { storeProducts } from "../../../data";
 import CartCard from "./CartCard/CartCard";
 import ContextStore from "../../../Context";
 import { Divider, Button } from "antd";
+import { Link } from "react-router-dom";
 
 const Cart: React.FC<{ currentProduct: IDetailedProduct }> = () => {
   const state = useContext(ContextStore);
@@ -25,11 +26,13 @@ const Cart: React.FC<{ currentProduct: IDetailedProduct }> = () => {
     <div style={{ justifyContent: "center", width: "80%" }}>
       <h1>Your Cart</h1>
       <Divider />
-      {productsView}
+      {productsView.length === 0 ? <p>Cart is empty</p> : productsView}
       <div style={{ float: "right", textAlign: "end" }}>
         <h1>Total: {totalPrice}</h1>
         <p>Shipping is added at checkout</p>
-        <Button>Proceed to checkout</Button>
+        <Link to="/Information">
+          <Button>Proceed to checkout</Button>'
+        </Link>
       </div>
     </div>
   );
